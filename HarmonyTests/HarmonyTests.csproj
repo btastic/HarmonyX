@@ -70,7 +70,16 @@
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='.NETCoreApp'">
-        <PackageReference Include="Lokad.ILPack" Version="0.1.7" PrivateAssets="all"/>
+        <PackageReference Include="Lokad.ILPack" Version="0.1.7" PrivateAssets="all" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Assembly-CSharp">
+        <HintPath>..\lib\Assembly-CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppInterop.Runtime">
+        <HintPath>..\lib\Il2CppInterop.Runtime.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
     <Target Name="ChangeAliasesOfStrongNameAssemblies" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
